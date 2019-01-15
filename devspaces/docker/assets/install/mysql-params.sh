@@ -1,0 +1,6 @@
+export MYSQL_PORT_3306_TCP_ADDR=localhost
+export MYSQL_PORT_3306_TCP_PORT=3306
+export MYSQL_ROOT_PASSWORD=snipeit
+export MYSQL_DATABASE=snipeit
+export MYSQL_USER=snipeit
+export MYSQL_PASSWORD=snipeit

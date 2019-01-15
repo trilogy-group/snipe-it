@@ -1,0 +1,16 @@
+version: '3.2'
+services:  
+  ignite-gpd-acm:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ../../
+        target: /data
+    container_name: trilogy-snipe-it
+    expose:
+      - "80"
+      - "3306"
+    network_mode: host
+
