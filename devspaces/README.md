@@ -67,14 +67,6 @@ This popup window could stop listen for build events and seems stuck. In that ca
 
 On the other hand, the validation process also happens asynchronously, so you should wait for a successful validation message in your email inbox or in the Taskbar Notification Area.
 
-### What Does The 'create' Command Do?
-
-1. Create a new Docker Container Configuration called `trilogy-snipe-it` in your DevSpaces with information coming from the file `devspaces.yml` and the `Dockerfile` itself.
-
-2. Trigger the aforementioned build/validation process.
-
-At the end of this process you can see the Configuration in the [DevSpaces User Interface][dfds-ui] with status `Stopped`, but in the middle with status `Building`, `Creating` and `Validating`.
-
 ## Start the Docker Container
 
 With the Docker Container Configuration in place and validated, now it's possible to start the Docker Container with the Development Servers running on it. Please proceed with the following command:
@@ -84,15 +76,6 @@ With the Docker Container Configuration in place and validated, now it's possibl
 As a output you will see something like:
 
     - DevSpace trilogy-snipe-it instance is starting and will synchronized with your local folder: C:\Users\Jaime Bravo\AppData\Roaming\DevSpaces\devfactory\DevSpaces\trilogy-snipe-it-04 after this DevSpace is ready
-
-### What Does The 'start' Command Do?
-
-1. Create and Start a new Docker Container.
-2. Start MySQL Server.
-3. Bind a Local Tempory Folder (created on the fly) to the Remote Folder `/data`. We change this in the next Section.
-4. Create a Public DNS Name, so you can hit your Development Servers.
-
-At the end of its execution you can see the `trilogy-snipe-it` Configuration in the [DevSpaces User Interface][dfds-ui] with status `Running`.
 
 ## Bind to the Docker Container
 
@@ -106,10 +89,6 @@ As a output you will see something like:
     / Syncing DevSpace trilogy-snipe-it...
 
     - The directory 'APP_REPO' will now be synchronized with DevSpace trilogy-snipe-it
-
-### What Does The 'bind' Command Do?
-
-Bind (rsync) your Local Repository Folder to the Container's Folder `/data`, the Remote Repository Path.
 
 NOTES:
 
@@ -149,11 +128,6 @@ An output example of this after starting the Docker Container is as follows:
 Now with the Container running and the Local Repository binded, it's possible to get inside of it, where more commands needs to be execute in order to get all the thing up and running properly. For that, just execute the following command:
 
     devspaces exec trilogy-snipe-it
-
-### What Does The 'exec' Command Do?
-
-1. Open a popup window `'DevSpaces exec -- Bash ******...'`.
-2. Start a new shell as `root` user inside the Docker Container.
 
 When you finish working with the Docker Container, type `exit`.
 
