@@ -1,0 +1,97 @@
+--- # devspaces.yml
+name: trilogy-snipe-it
+description: Development environment for Trilogy Snipe-IT Application
+icon-file: expressjslogo.png
+
+# If you want to use a different Dockerfile for your DevSpace, provide the path
+# here.
+docker-file: Dockerfile
+
+# If you need additional files when building your Dockerfile, such as some
+# application binaries that your Dockerfile references, list the glob paths to
+# include here. They are relative to this devspaces.yml file.
+docker-build-includes: |
+  **/*
+
+ports:
+  - protocol: http
+    port-number: 80
+    description: Apache 2.4
+  - protocol: tcp
+    port-number: 3306
+    description: MySQL 5.6
+
+# When you bind your DevSpace to a local directory, the files will be synchronized
+# betewen your workstation and the /data directory in your DevSpace container.
+# If there are files that should not be synced, such as large objects or logs,
+# configure an ignore directive here
+sync-ignore: |
+  .git
+  **/node_modules
+  .data
+  .couscous
+  .DS_Store
+  .env
+  .idea
+  /bin/
+  /bootstrap/compiled.php
+  /vendor
+  app/database/*.sqlite
+  app/storage/meta/services.json
+  composer.phar
+  crowdin.yaml
+  Homestead.json
+  Homestead.yaml
+  output
+  phpDocumentor.phar
+  public/uploads/*.gif
+  public/uploads/barcodes/*.png
+  public/uploads/*.jpg
+  public/uploads/*.png
+  public/uploads/*.svg
+  public/uploads/*.tif
+  public/uploads/assets/*
+  public/uploads/avatars/*
+  public/uploads/logo.gif
+  public/uploads/logo.png
+  public/uploads/logo.svg
+  public/uploads/models/*
+  public/uploads/suppliers/*
+  public/uploads/accessories/*
+  public/uploads/locations/*
+  public/uploads/manufacturers/*
+  public/uploads/components/*
+  public/uploads/consumables/*
+  public/uploads/companies/*
+  public/uploads/categories/*
+  public/uploads/users/*
+  storage/app/private_uploads/users/*
+  public/uploads/departments/*
+  storage/debugbar/*
+  storage/dumps/*
+  storage/laravel-backups
+  storage/logs/*
+  storage/private_uploads/users/*
+  tests/_data/scenarios
+  tests/_output/*
+  tests/_support/_generated/*
+  /npm-debug.log
+  /storage/oauth-private.key
+  /storage/oauth-public.key
+  *.cache
+  /public/storage
+  bootstrap/cache/*
+  storage/app/*
+  storage/app/!backups
+  storage/app/backups/*
+  storage/app/backups/!env-backups
+  storage/app/backups/env-backups/*
+  storage/framework/cache/*
+  storage/framework/sessions/*
+  storage/framework/views/*
+  storage/private_uploads/assetmodels/*
+  storage/private_uploads/assets/*
+  storage/private_uploads/audits/*
+  storage/private_uploads/imports/*
+  storage/private_uploads/licenses/*
+  storage/private_uploads/signatures/*
