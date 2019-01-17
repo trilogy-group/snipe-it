@@ -12,3 +12,4 @@ debconf-set-selections <<< "mysql-server-5.6 mysql-server/root_password password
 debconf-set-selections <<< "mysql-server-5.6 mysql-server/root_password_again password $MYSQL_ROOT_PASSWORD"
 debconf-set-selections <<< 'mysql-server-5.6 mysql-server-5.6/start_on_boot boolean true'
 apt install -y mysql-server-5.6
+rm -rf /var/cache/*
